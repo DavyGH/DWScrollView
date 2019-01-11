@@ -20,6 +20,13 @@ class DWScrollView: UIView {
     var toolBarView: DWToolBarView?
     var scrollView: UIScrollView?
     var titles = [String]()
+    
+    /// 重新刷新视图(这里处理视图frame变化错乱问题)
+    func uploadView(frame:CGRect) {
+        self.frame = frame
+        self.toolBarView?.frame = CGRect(x: 0, y: 0, width: frame.width, height: flowLayout.tooBarHeight)
+        self.scrollView?.frame = CGRect(x: 0, y: flowLayout.tooBarHeight, width: frame.width, height: frame.height - flowLayout.tooBarHeight)
+    }
 
     init(frame: CGRect ,superViewController:UIViewController ,viewControllers: [UIViewController] ,titles:[String] ,flowLayout: DWScrollViewFlowLayout?) {
         super.init(frame: frame)
