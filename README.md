@@ -32,7 +32,6 @@ override func viewDidLoad() {
     }
     
     DWScrollViewDelegate 点击事件回调
-    
     func dw_ScrollView(didSelectItemAt index: Int) {
         print(index)
     }
