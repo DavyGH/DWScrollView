@@ -10,6 +10,9 @@ import UIKit
 
 class DWScrollViewFlowLayout: NSObject {
     
+    /// 背景颜色
+    var backgroundColor = UIColor.white
+    
     /// 栏高
     var tooBarHeight = CGFloat(50)
     
@@ -23,7 +26,10 @@ class DWScrollViewFlowLayout: NSObject {
     var toolBarTitleSelectColor = UIColor.red
     
     /// 标题字体大小
-    var toolBarTitleFont = UIFont.systemFont(ofSize: 17)
+    var toolBarTitleFont = UIFont.systemFont(ofSize: 15)
+    
+    /// 标题字体选中大小
+    var toolBarTitleSelectFont = UIFont.systemFont(ofSize: 17)
     
     /// 底部线颜色
     var toolBarBottomLineColor = UIColor.red

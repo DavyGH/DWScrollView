@@ -42,7 +42,7 @@ class DWToolBarView: UIView {
         flowLayout?.scrollDirection = .horizontal
         flowLayout?.minimumInteritemSpacing = 0
         flowLayout?.minimumLineSpacing = 0
-        flowLayout?.itemSize = CGSize(width: bounds.width/4, height: bounds.height)
+        flowLayout?.itemSize = CGSize(width: bounds.width/CGFloat(titles.count), height: bounds.height)
         
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: flowLayout!)
         collectionView?.register(DWToolBarCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -71,8 +71,10 @@ extension DWToolBarView: UICollectionViewDelegate,UICollectionViewDataSource {
         cell.contentView.backgroundColor = dwFlowLayout.toolBarBackgroundColor
         if indexPath.row == currentIndex {
             cell.titleLab?.textColor = dwFlowLayout.toolBarTitleSelectColor
+            cell.titleLab?.font = dwFlowLayout.toolBarTitleSelectFont
         }else{
             cell.titleLab?.textColor = dwFlowLayout.toolBarTitleColor
+            cell.titleLab?.font = dwFlowLayout.toolBarTitleFont
         }
         cell.titleLab?.text = titles[indexPath.row]
         return cell

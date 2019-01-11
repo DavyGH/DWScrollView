@@ -46,7 +46,9 @@ class DWScrollView: UIView {
         
         scrollView = UIScrollView(frame: CGRect(x: 0, y: flowLayout.tooBarHeight, width: bounds.width, height: bounds.height - flowLayout.tooBarHeight))
         scrollView?.contentSize = CGSize(width: bounds.width*CGFloat(titles.count), height: bounds.height - flowLayout.tooBarHeight)
-        scrollView?.showsHorizontalScrollIndicator = true
+        scrollView?.backgroundColor = flowLayout.backgroundColor
+        scrollView?.showsHorizontalScrollIndicator = false
+        scrollView?.showsVerticalScrollIndicator = false
         scrollView?.isPagingEnabled = true
         scrollView?.delegate = self
         
